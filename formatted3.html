@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Confirmation de réservation</title>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+      }
+
+      header {
+         background-color: #f1f1f1;
+         padding: 20px;
+         text-align: center;
+      }
+
+      h1 {
+         color: #333333;
+         font-size: 32px;
+      }
+
+      main {
+         padding: 20px;
+         text-align: center;
+      }
+
+      p {
+         font-size: 20px;
+         margin-bottom: 10px;
+      }
+
+      .highlight {
+         color: #ff9900;
+         font-weight: bold;
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <h1>Confirmation de réservation</h1>
+   </header>
+   <main>
+      <p>Merci <span class="highlight" id="name"></span> pour votre réservation !</p>
+      <p>Un email de confirmation a été envoyé à <span class="highlight" id="email"></span>.</p>
+      <p>Vous avez réservé un rendez-vous pour le service <span class="highlight" id="service"></span> le <span class="highlight" id="date"></span> à <span class="highlight" id="time"></span>.</p>
+   </main>
+   <img src="C:\Users\PC\Desktop\2.jpeg?text=Coiffure+3" >
+   <img src="C:\Users\PC\Desktop\2.jpeg?text=Coiffure+3" >
+   <img src="C:\Users\PC\Desktop\2.jpeg?text=Coiffure+3" >
+
+   <script>
+      function getQueryParams() {
+         const params = {};
+         const queryString = window.location.search.substring(1);
+         const vars = queryString.split('&');
+         vars.forEach(function (param) {
+            const pair = param.split('=');
+            params[pair[0]] = decodeURIComponent(pair[1]);
+         });
+         return params;
+      }
+
+      window.onload = function () {
+         const params = getQueryParams();
+         document.getElementById('name').textContent = params['name'];
+         document.getElementById('email').textContent = params['email'];
+         document.getElementById('service').textContent = params['service'];
+         document.getElementById('date').textContent = params['date'];
+         document.getElementById('time').textContent = params['time'];
+      };
+   </script>
+</body>
+
+</html>

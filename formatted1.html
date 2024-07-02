@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Réservation - Institut de Beauté GLAM'S HOUSE</title>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #fffaf0;
+         color: #333333;
+      }
+
+      header {
+         background-color: #ffefd5;
+         padding: 20px;
+         text-align: center;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+         color: #ff69b4;
+         font-size: 36px;
+         margin: 0;
+      }
+
+      main {
+         padding: 40px;
+         max-width: 800px;
+         margin: auto;
+         text-align: center;
+      }
+
+      form {
+         max-width: 600px;
+         margin: 0 auto;
+         background-color: #ffffff;
+         padding: 20px;
+         border-radius: 10px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+         display: block;
+         margin-bottom: 10px;
+         text-align: left;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="date"],
+      input[type="time"],
+      select {
+         width: 100%;
+         padding: 10px;
+         font-size: 16px;
+         border: 1px solid #cccccc;
+         border-radius: 5px;
+         margin-bottom: 20px;
+      }
+
+      input[type="submit"] {
+         background-color: #ff69b4;
+         color: #ffffff;
+         padding: 15px 30px;
+         font-size: 20px;
+         border-radius: 5px;
+         border: none;
+         cursor: pointer;
+         transition: background-color 0.3s ease;
+      }
+
+      input[type="submit"]:hover {
+         background-color: #ff1493;
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <h1>Réservez votre rendez-vous</h1>
+   </header>
+   <main>
+      <form id="reservation-form">
+         <label for="name">Nom :</label>
+         <input type="text" id="name" name="name" required>
+
+         <label for="email">Email :</label>
+         <input type="email" id="email" name="email" required>
+
+         <label for="service">Service :</label>
+         <select id="service" name="service" required>
+            <option value="">Sélectionnez un service</option>
+            <option value="Massage">Massage</option>
+            <option value="Manucure">Manucure</option>
+			<option value="Ongleries">Ongleries</option>
+            <option value="Manucure/Pédicure">Manucure/Pédicure</option>
+			<option value="Formation professionnelle">Formation professionnelle</option>
+			<option value="Confection/Vente des perruque">Confection/Vente des perruque</option>
+			<option value="Vente des produits cosmétiques">Vente des produits cosmétiques</option>
+			<option value="Poses frontal, greffe, closure, all styles">Poses frontal, greffe, closure, all styles</option>
+			<option value="Conseils">Conseils</option>
+            <option value="Traitement du visage">Traitement du visage</option>
+         </select>
+
+         <label for="date">Date :</label>
+         <input type="date" id="date" name="date" required>
+
+         <label for="time">Heure :</label>
+         <input type="time" id="time" name="time" required>
+
+         <input type="submit" value="Réserver">
+      </form>
+   </main>
+         <img src="C:\Users\PC\Desktop\2.jpeg?text=Coiffure+3" >
+   
+   <script>
+      document.getElementById('reservation-form').addEventListener('submit', function (event) {
+         event.preventDefault();
+
+         const name = document.getElementById('name').value;
+         const email = document.getElementById('email').value;
+         const service = document.getElementById('service').value;
+         const date = document.getElementById('date').value;
+         const time = document.getElementById('time').value;
+
+         const queryString = `?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&service=${encodeURIComponent(service)}&date=${encodeURIComponent(date)}&time=${encodeURIComponent(time)}`;
+
+         window.location.href = `formatted3.html${queryString}`;
+      });
+   </script>
+</body>
+
+</html>
